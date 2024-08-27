@@ -1,0 +1,9 @@
+[package]
+name = "axum-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7.5"
+tokio = { version = "1.39.3", features = ["macros", "rt", "rt-multi-thread"] }
+scalar-doc = { path = "../../scalar-doc" }

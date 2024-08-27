@@ -1,0 +1,5 @@
+[workspace]
+
+members = ["examples/actix", "examples/axum", "examples/basic", "scalar-doc"]
+default-members = ["scalar-doc"]
+resolver = "2"
