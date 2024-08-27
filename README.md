@@ -1,6 +1,6 @@
 # Scalar Doc (for Rust)
 
-An HTTP API documentation generator for Rust that doesn't care about which HTTP framework yo use.
+An HTTP API documentation generator for Rust that doesn't care about which HTTP framework you use.
 
 ## Usage
 
