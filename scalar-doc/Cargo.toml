@@ -6,7 +6,7 @@ edition = "2021"
 description = "An HTTP API documentation generator for Rust that doesn't care about which HTTP framework yo use."
 repository = "https://github.com/Courtcircuits/scalar-doc.rs"
 homepage = "https://github.com/Courtcircuits/scalar-doc.rs"
-readme = "README.md"
+readme = { file = "README.md", workspace = true }
 keywords = ["http", "api", "documentation", "openapi", "swagger"]
 categories = ["web-programming", "development-tools"]
 
