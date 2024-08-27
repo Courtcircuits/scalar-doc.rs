@@ -42,6 +42,12 @@ async fn main() {
 
 ### Actix
 
+To use `scalar-doc` with `actix`, you will need to activate the `actix` feature in your `Cargo.toml` file.
+
+```bash
+cargo add scalar-doc -F actix
+```
+
 ```rust
 use actix_web::{get, App, HttpResponse, HttpServer, Responder};
 use scalar_doc::scalar_actix::ActixDocumentation;
