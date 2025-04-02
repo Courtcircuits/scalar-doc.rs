@@ -20,6 +20,8 @@ pub enum Theme {
     Kepler,
     Mars,
     DeepSpace,
+    Elysiajs,
+    Fastify,
     None,
 }
 
@@ -45,6 +47,8 @@ impl Theme {
             Theme::Kepler => "kepler",
             Theme::Mars => "mars",
             Theme::DeepSpace => "deep-space",
+            Theme::Elysiajs => "elysiajs",
+            Theme::Fastify => "fastify",
             Theme::None => "none",
         }
     }
