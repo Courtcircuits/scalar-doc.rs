@@ -2,6 +2,8 @@
 
 An HTTP API documentation generator for Rust that doesn't care about which HTTP framework you use.
 
+Using [scalar](https://github.com/scalar/scalar) !!!
+
 ## Usage
 
 To use this crate, add it to your `Cargo.toml` with :
@@ -76,3 +78,33 @@ async fn main() -> std::io::Result<()> {
 
 
 Check out the [examples](./examples) for more show cases.
+
+## Contributors 
+
+<table>
+    <tbody>
+        <tr>
+            <td align="center">
+                <a href="https://github.com/Courtcircuits">
+                    <img src="https://avatars.githubusercontent.com/u/90451752?v=4" width="100;" alt="Courtcircuits"/>
+                    <br />
+                    <sub><b>Courtcircuits</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/theotchlx">
+                    <img src="https://avatars.githubusercontent.com/u/60852187?v=4" width="100;" alt="theotchlx"/>
+                    <br />
+                    <sub><b>theotchlx</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/dcdms">
+                    <img src="https://avatars.githubusercontent.com/u/115591764?v=4" width="100;" alt="dcdms"/>
+                    <br />
+                    <sub><b>dcdms</b></sub>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

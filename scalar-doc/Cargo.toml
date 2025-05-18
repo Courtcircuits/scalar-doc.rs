@@ -1,7 +1,7 @@
 [package]
 license = "Apache-2.0"
 name = "scalar-doc"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "An HTTP API documentation generator for Rust that doesn't care about which HTTP framework you use."
 repository = "https://github.com/Courtcircuits/scalar-doc.rs"
