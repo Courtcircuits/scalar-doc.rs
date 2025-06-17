@@ -1,7 +1,6 @@
 use anyhow::Result;
 use serde::Serialize;
 use tera::{Context, Tera};
-
 use crate::favicon::{Favicon, FaviconMimeType};
 
 pub mod configuration;
