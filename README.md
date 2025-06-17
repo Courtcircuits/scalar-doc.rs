@@ -107,6 +107,13 @@ Check out the [examples](./examples) for more show cases.
                     <sub><b>dcdms</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="https://github.com/smokingplaya">
+                    <img src="https://avatars.githubusercontent.com/u/82664853?v=4" width="100;" alt="smokingplaya"/>
+                    <br />
+                    <sub><b>smokingplaya</b></sub>
+                </a>
+            </td>
         </tr>
     </tbody>
 </table>
