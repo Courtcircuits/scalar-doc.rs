@@ -21,6 +21,7 @@ use scalar_doc::Documentation;
 
 async fn doc() -> String {
     Documentation::new("Api Documentation title", "/openapi")
+        .favicon("/favicon.svg", FaviconMimeType::Svg)
         .build()
         .unwrap()
 }
@@ -52,11 +53,12 @@ cargo add scalar-doc -F actix
 
 ```rust
 use actix_web::{get, App, HttpResponse, HttpServer, Responder};
-use scalar_doc::scalar_actix::ActixDocumentation;
+use scalar_doc::{favicon::FaviconMimeType, scalar_actix::ActixDocumentation};
 
 #[get("/")]
 async fn doc() -> impl Responder {
     ActixDocumentation::new("Api Documentation title", "/openapi")
+        .favicon("/favicon.svg", FaviconMimeType::Svg)
         .theme(scalar_doc::Theme::Kepler)
         .service()
 }
@@ -79,7 +81,7 @@ async fn main() -> std::io::Result<()> {
 
 Check out the [examples](./examples) for more show cases.
 
-## Contributors 
+## Contributors
 
 <table>
     <tbody>

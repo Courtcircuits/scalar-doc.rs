@@ -1,8 +1,10 @@
 use anyhow::Result;
 use serde::Serialize;
 use tera::{Context, Tera};
+use crate::favicon::{Favicon, FaviconMimeType};
 
 pub mod configuration;
+pub mod favicon;
 #[cfg(feature = "actix")]
 pub mod scalar_actix;
 
@@ -56,6 +58,7 @@ impl Theme {
 
 pub struct Documentation {
     title: String,
+    favicon: Favicon,
     content: String,
     configuration: configuration::Configuration,
 }
@@ -64,9 +67,20 @@ impl Documentation {
     pub fn new(title: &str, content: &str) -> Self {
         Self {
             title: title.to_string(),
+            favicon: Favicon::default(),
             content: content.to_string(),
             configuration: configuration::Configuration::default(),
         }
+    }
+
+    pub fn favicon(&mut self, favicon: &str, mime: FaviconMimeType) -> &mut Self {
+        self.favicon = Favicon::new(favicon.to_string(), mime);
+        self
+    }
+
+    pub fn favicon_raw(&mut self, favicon: Favicon) -> &mut Self {
+        self.favicon = favicon;
+        self
     }
 
     pub fn theme(&mut self, theme: Theme) -> &mut Self {
@@ -76,12 +90,13 @@ impl Documentation {
 
     pub fn build(&self) -> Result<String, anyhow::Error> {
         let configuration = serde_json::to_string(&self.configuration)?;
-        templatize(self.content.clone(), self.title.clone(), configuration)
+        templatize(self.content.clone(), self.favicon.clone(), self.title.clone(), configuration)
     }
 }
 
 pub fn templatize(
     content: String,
+    favicon: Favicon,
     title: String,
     configuration: String,
 ) -> Result<String, anyhow::Error> {
@@ -90,6 +105,8 @@ pub fn templatize(
 
     let mut context = Context::new();
     context.insert("documentation", &content);
+    context.insert("favicon", favicon.favicon()); // it's already &String
+    context.insert("favicon_mime", &favicon.mime());
     context.insert("title", &title);
     context.insert("configuration", &configuration);
 

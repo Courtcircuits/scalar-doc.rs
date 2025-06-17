@@ -1,6 +1,5 @@
 use actix_web::{HttpResponse, Responder};
-
-use crate::{templatize, Documentation, Theme};
+use crate::{favicon::{Favicon, FaviconMimeType}, Documentation, Theme};
 
 pub struct ActixDocumentation {
     documentation: Documentation,
@@ -11,6 +10,16 @@ impl ActixDocumentation {
         Self {
             documentation: Documentation::new(title, content),
         }
+    }
+
+    pub fn favicon(&mut self, favicon: &str, mime: FaviconMimeType) -> &mut Self {
+        self.documentation.favicon = Favicon::new(favicon.to_string(), mime);
+        self
+    }
+
+    pub fn favicon_raw(&mut self, favicon: Favicon) -> &mut Self {
+        self.documentation.favicon = favicon;
+        self
     }
 
     pub fn theme(&mut self, theme: Theme) -> &mut Self {
